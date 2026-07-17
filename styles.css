@@ -350,6 +350,63 @@ h3 { margin: 0 0 0.75rem; font-size: clamp(1.15rem, 2vw, 1.5rem); }
 
 .not-found { min-height: 70svh; display: grid; place-items: center; text-align: center; }
 
+.confirmation-hero {
+  min-height: calc(100svh - 72px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.confirmation-card {
+  width: min(100%, 760px);
+  padding: clamp(2rem, 7vw, 4.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 50% 8%, rgba(169, 212, 255, 0.18), transparent 34rem),
+    linear-gradient(180deg, rgba(14, 27, 52, 0.78), rgba(5, 11, 22, 0.9));
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.confirmation-card h1 {
+  font-size: clamp(2.45rem, 6.8vw, 5.4rem);
+}
+
+.confirmation-card .lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmation-sphere {
+  width: 108px;
+  aspect-ratio: 1;
+  margin: 0 auto 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.9) 0 8%, rgba(169,212,255,.36) 9% 24%, transparent 25%),
+    radial-gradient(circle at 42% 34%, rgba(169,212,255,.52), transparent 35%),
+    radial-gradient(circle, #123772 0%, #061a3a 56%, #041020 82%);
+  border: 1px solid rgba(240, 249, 255, 0.9);
+  box-shadow:
+    0 0 20px rgba(236,247,255,0.82),
+    0 0 62px rgba(85,145,255,0.38),
+    inset 0 0 32px rgba(169,212,255,0.24);
+}
+
+.confirmation-sphere span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 18px rgba(255,255,255,.92), 0 0 42px rgba(169,212,255,.72);
+}
+
+.confirmation-actions {
+  justify-content: center;
+}
+
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 
 @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.018); } }
