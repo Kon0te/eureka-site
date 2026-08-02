@@ -493,3 +493,6 @@ th {
   color: var(--color-text);
   background: rgba(169, 212, 255, 0.08);
 }
+.contact-form-card {
+  margin-top: 1rem;
+}
