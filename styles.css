@@ -493,6 +493,10 @@ th {
   color: var(--color-text);
   background: rgba(169, 212, 255, 0.08);
 }
+.contact-topic-grid {
+  margin-bottom: var(--space-4);
+}
+
 .contact-form-card {
-  margin-top: 1rem;
+  margin-top: 0;
 }
