@@ -5,8 +5,8 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $patterns = @(
   "TODO",
   "FIXME",
-  "Ã€ complÃ©ter",
-  "A complÃ©ter",
+  "À compléter",
+  "A compléter",
   "PLACEHOLDER",
   "example.com",
   "example.org",
@@ -16,9 +16,9 @@ $patterns = @(
   "SIRET_PLACEHOLDER",
   "ADDRESS_PLACEHOLDER",
   "MEDIATOR_PLACEHOLDER",
-  "MÃ‰DIATEUR Ã€ DÃ‰SIGNER",
-  "DATE Ã€ DÃ‰FINIR",
-  "DATE Ã€ COMPLÃ‰TER",
+  "MÉDIATEUR À DÉSIGNER",
+  "DATE À DÉFINIR",
+  "DATE À COMPLÉTER",
   "Lorem ipsum",
   "John Doe",
   "Jane Doe"
