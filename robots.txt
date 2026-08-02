@@ -1,6 +1,5 @@
 ﻿User-agent: *
 Allow: /
-
-Sitemap: https://eureka-apps.fr/sitemap.xml
 Disallow: /admin/
 
+Sitemap: https://eureka-apps.fr/sitemap.xml

@@ -443,3 +443,53 @@ h3 { margin: 0 0 0.75rem; font-size: clamp(1.15rem, 2vw, 1.5rem); }
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 1ms !important; }
   .neural-sphere::before, .neural-sphere::after { animation: none !important; }
 }
+.legal-nav {
+  justify-content: flex-end;
+}
+
+.legal-page-hero .legal-meta {
+  color: var(--color-blue-soft);
+  font-weight: 700;
+}
+
+.legal-summary ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.legal-summary a,
+.legal-card a {
+  color: var(--color-blue-soft);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.legal-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(169, 212, 255, 0.16);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  padding: 0.85rem;
+  border-bottom: 1px solid rgba(169, 212, 255, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--color-text);
+  background: rgba(169, 212, 255, 0.08);
+}
