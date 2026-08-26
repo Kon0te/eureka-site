@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réinitialiser le mot de passe | Eurêka</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#050b16">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="section not-found" id="contenu">
+    <div class="legal-card">
+      <p class="eyebrow">Compte Eurêka</p>
+      <h1>Choisir un nouveau mot de passe</h1>
+      <p id="recovery-message">Pour protéger votre compte, confirmez l’ouverture d’Eurêka sur l’appareil depuis lequel vous avez demandé le lien.</p>
+      <p><a class="button" id="open-eureka" href="#" rel="noreferrer">Ouvrir Eurêka</a></p>
+      <p><a href="/contact">Contacter le support</a></p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner"><p>© Eurêka</p><div class="footer-links"><a href="/confidentialite">Confidentialité</a><a href="/contact">Contact</a></div></div>
+  </footer>
+  <script>
+    (function () {
+      'use strict';
+      var current = new URL(window.location.href);
+      var fragment = new URLSearchParams(current.hash.replace(/^#/, ''));
+      var forwarded = new URLSearchParams();
+      var allowed = ['code', 'error', 'error_code', 'error_description', 'sb_flow_id', 'type'];
+      allowed.forEach(function (key) {
+        var value = current.searchParams.get(key) || fragment.get(key);
+        if (value) forwarded.set(key, value);
+      });
+
+      var button = document.getElementById('open-eureka');
+      var message = document.getElementById('recovery-message');
+      if (!forwarded.has('code') && !forwarded.has('error')) {
+        button.removeAttribute('href');
+        button.setAttribute('aria-disabled', 'true');
+        message.textContent = 'Ce lien est incomplet ou a expiré. Revenez dans Eurêka et demandez un nouveau lien.';
+        return;
+      }
+
+      button.href = 'fr.eurekaapps.eureka://reset-password?' + forwarded.toString();
+    }());
+  </script>
+</body>
+</html>
