@@ -31,4 +31,15 @@ test('invitation renders only a bounded validated code', () => {
   assert.match(script, /\^\[A-Z0-9\]\{12\}\$/);
   assert.match(script, /codeElement\.textContent = code/);
   assert.doesNotMatch(script, /innerHTML/);
+  assert.match(page, /apps\.apple\.com\/app\/id6806642638/);
+  assert.match(page, /play\.google\.com\/store\/apps\/details\?id=fr\.eurekaapps\.eureka/);
+  assert.match(page, /nouveau compte Eurêka/);
+  assert.match(page, /3ᵉ Moment terminé/);
+});
+
+test('home exposes the stable official store destinations', () => {
+  const page = read('index.html');
+
+  assert.match(page, /apps\.apple\.com\/app\/id6806642638/);
+  assert.match(page, /play\.google\.com\/store\/apps\/details\?id=fr\.eurekaapps\.eureka/);
 });

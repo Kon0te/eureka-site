@@ -10,7 +10,7 @@
   if (!valid || !codeElement || !helpElement || !copyButton) return;
 
   codeElement.textContent = code;
-  helpElement.textContent = 'Conserve ce code : Eurêka te le demandera après la création de ton compte.';
+  helpElement.textContent = 'Copie ce code : tu pourras l’ajouter directement pendant la création de ton compte.';
   copyButton.disabled = false;
   copyButton.addEventListener('click', async () => {
     try {
