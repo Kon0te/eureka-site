@@ -6,6 +6,8 @@
   <title>Invitation Eurêka</title>
   <meta name="description" content="Une invitation personnelle pour découvrir Eurêka et construire un nouveau déclic chaque jour.">
   <meta name="robots" content="noindex, follow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; upgrade-insecure-requests">
   <link rel="canonical" href="https://eureka-apps.fr/invitation/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tu es invité à découvrir Eurêka">
@@ -54,30 +56,6 @@
     </div>
   </footer>
   <script src="../script.js" defer></script>
-  <script>
-    (() => {
-      const code = new URLSearchParams(window.location.search)
-        .get('code')?.replace(/[^a-z0-9]/gi, '').toUpperCase() ?? '';
-      const valid = /^[A-Z0-9]{12}$/.test(code);
-      const codeElement = document.querySelector('[data-invitation-code]');
-      const helpElement = document.querySelector('[data-invitation-help]');
-      const copyButton = document.querySelector('[data-copy-invitation]');
-      if (!valid || !codeElement || !helpElement || !copyButton) return;
-
-      codeElement.textContent = code;
-      helpElement.textContent = 'Conserve ce code : Eurêka te le demandera après la création de ton compte.';
-      copyButton.disabled = false;
-      copyButton.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(code);
-          copyButton.textContent = 'Code copié';
-        } catch (_) {
-          codeElement.setAttribute('tabindex', '-1');
-          codeElement.focus();
-          copyButton.textContent = 'Sélectionne le code';
-        }
-      });
-    })();
-  </script>
+  <script src="invitation.js" defer></script>
 </body>
 </html>
