@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "8VAPH8CZ2V.fr.eurekaapps.eureka",
+        "components": [
+          {
+            "/": "/invitation/*",
+            "comment": "Liens de parrainage Eurêka"
+          }
+        ]
+      }
+    ]
+  }
+}

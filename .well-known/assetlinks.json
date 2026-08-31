@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.eurekaapps.eureka",
+      "sha256_cert_fingerprints": [
+        "76:5D:F0:31:D0:83:AF:1C:2B:FC:E8:6A:45:0F:80:F4:3E:1B:36:87:67:D1:89:AA:A2:FE:F5:F7:93:0B:B1:D3"
+      ]
+    }
+  }
+]

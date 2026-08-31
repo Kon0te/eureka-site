@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invitation Eurêka</title>
+  <meta name="description" content="Une invitation personnelle pour découvrir Eurêka et construire un nouveau déclic chaque jour.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://eureka-apps.fr/invitation/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tu es invité à découvrir Eurêka">
+  <meta property="og:description" content="Rejoins Eurêka avec ce code d’invitation personnel.">
+  <meta property="og:url" content="https://eureka-apps.fr/invitation/">
+  <meta property="og:site_name" content="Eurêka">
+  <meta name="theme-color" content="#050b16">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navigation principale">
+      <a class="brand" href="../" aria-label="Accueil Eurêka"><span class="brand-mark" aria-hidden="true"></span><span>Eurêka</span></a>
+      <div class="nav-links legal-nav"><a href="../contact">Support</a></div>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="section confirmation-hero" aria-labelledby="invitation-title">
+      <div class="confirmation-card">
+        <div class="confirmation-sphere" aria-hidden="true"><span></span></div>
+        <p class="eyebrow">Invitation personnelle</p>
+        <h1 id="invitation-title">Un nouveau déclic t’attend.</h1>
+        <p class="lead">Installe Eurêka, crée un nouveau compte, puis saisis ce code dans l’espace Parrainage sous 72 heures.</p>
+        <div class="invitation-code" data-invitation-code aria-live="polite">Code indisponible</div>
+        <p class="invitation-help" data-invitation-help>Le lien reçu ne contient pas de code valide. Demande un nouveau partage à ton parrain.</p>
+        <div class="hero-actions confirmation-actions">
+          <button class="button" type="button" data-copy-invitation disabled>Copier le code</button>
+          <a class="button secondary" href="../#concept">Découvrir Eurêka</a>
+        </div>
+        <p class="availability">Si Eurêka est déjà installée, ce lien ouvre normalement l’application directement.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span data-year></span> Eurêka</p>
+      <div class="footer-links">
+        <a href="../confidentialite">Confidentialité</a>
+        <a href="../conditions">Conditions</a>
+        <a href="../contact">Support</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js" defer></script>
+  <script>
+    (() => {
+      const code = new URLSearchParams(window.location.search)
+        .get('code')?.replace(/[^a-z0-9]/gi, '').toUpperCase() ?? '';
+      const valid = /^[A-Z0-9]{12}$/.test(code);
+      const codeElement = document.querySelector('[data-invitation-code]');
+      const helpElement = document.querySelector('[data-invitation-help]');
+      const copyButton = document.querySelector('[data-copy-invitation]');
+      if (!valid || !codeElement || !helpElement || !copyButton) return;
+
+      codeElement.textContent = code;
+      helpElement.textContent = 'Conserve ce code : Eurêka te le demandera après la création de ton compte.';
+      copyButton.disabled = false;
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(code);
+          copyButton.textContent = 'Code copié';
+        } catch (_) {
+          codeElement.setAttribute('tabindex', '-1');
+          codeElement.focus();
+          copyButton.textContent = 'Sélectionne le code';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
