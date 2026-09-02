@@ -39,11 +39,17 @@ assets/branding/
 assets/icons/
 ```
 
-Les fichiers `assets/branding/eureka-logo-full.png` et
-`assets/branding/eureka-logo-sphere.png` sont les déclinaisons validées et
-partagées avec l’application. Le logo complet est réservé aux compositions de
-marque ; la sphère seule est utilisée dans la navigation et les formats
-compacts.
+Les fichiers `assets/branding/eureka-logo-full.png`,
+`assets/branding/eureka-logo-sphere.png` et
+`assets/branding/eureka-logo-wordmark.png` sont les déclinaisons transparentes
+validées et partagées avec l’application. Le fond canonique reste `#0B1020` :
+il est fourni par l’interface, jamais incorporé dans ces trois logos. Le logo
+complet est réservé aux compositions de marque ; la sphère et le mot-symbole
+sont utilisés dans la navigation et les formats compacts.
+
+`assets/branding/eureka-social-card.png` est la seule composition de partage
+qui intègre volontairement le fond canonique, afin de rester lisible dans les
+aperçus Open Graph et Twitter.
 
 ## Publier avec GitHub Pages
 
