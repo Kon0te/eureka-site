@@ -35,8 +35,15 @@ sitemap.xml
 CNAME
 .nojekyll
 assets/images/
+assets/branding/
 assets/icons/
 ```
+
+Les fichiers `assets/branding/eureka-logo-full.png` et
+`assets/branding/eureka-logo-sphere.png` sont les déclinaisons validées et
+partagées avec l’application. Le logo complet est réservé aux compositions de
+marque ; la sphère seule est utilisée dans la navigation et les formats
+compacts.
 
 ## Publier avec GitHub Pages
 

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
@@ -42,4 +42,38 @@ test('home exposes the stable official store destinations', () => {
 
   assert.match(page, /apps\.apple\.com\/app\/id6806642638/);
   assert.match(page, /play\.google\.com\/store\/apps\/details\?id=fr\.eurekaapps\.eureka/);
+});
+
+test('public pages use the validated Eurêka identity assets', () => {
+  const home = read('index.html');
+  const styles = read('styles.css');
+  const brandedPages = [
+    '404.html',
+    'auth/reset-password.html',
+    'conditions.html',
+    'confidentialite.html',
+    'confirmation-email.html',
+    'contact.html',
+    'invitation/index.html',
+    'mentions-legales.html',
+    'support.html',
+    'suppression-compte.html',
+  ];
+
+  assert.ok(existsSync(new URL('../assets/branding/eureka-logo-full.png', import.meta.url)));
+  assert.ok(existsSync(new URL('../assets/branding/eureka-logo-sphere.png', import.meta.url)));
+  assert.ok(existsSync(new URL('../assets/icons/favicon.png', import.meta.url)));
+  assert.ok(existsSync(new URL('../assets/icons/apple-touch-icon.png', import.meta.url)));
+  assert.match(home, /assets\/branding\/eureka-logo-full\.png/);
+  assert.match(styles, /--color-bg: #0b1020/);
+  assert.match(styles, /eureka-logo-sphere\.png/);
+  assert.doesNotMatch(home, /class="neural-sphere"|class="node"/);
+  assert.doesNotMatch(styles, /\.neural-sphere|\.node\s*\{/);
+
+  for (const pagePath of brandedPages) {
+    const page = read(pagePath);
+    assert.doesNotMatch(page, /favicon\.svg|#050b16/);
+    assert.match(page, /favicon\.png/);
+    assert.match(page, /apple-touch-icon\.png/);
+  }
 });
