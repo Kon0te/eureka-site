@@ -1,31 +1,17 @@
-'use strict';
-
-self.addEventListener('install', () => {
-  self.skipWaiting();
-});
-
+// Retirement worker for the obsolete Flutter administration at /admin/.
+// Keep this URL deployed so an existing installation can relinquish control.
+self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    (async () => {
-      try {
-        await self.registration.unregister();
-      } catch (e) {
-        console.warn('Failed to unregister the service worker:', e);
+  event.waitUntil((async () => {
+    for (const key of ['flutter-app-cache', 'flutter-temp-cache', 'flutter-app-manifest']) {
+      await caches.delete(key);
+    }
+    await self.registration.unregister();
+    const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of windows) {
+      if (new URL(client.url).pathname.startsWith('/admin/')) {
+        await client.navigate('https://admin.eureka-apps.fr/#/admin');
       }
-
-      try {
-        const clients = await self.clients.matchAll({
-          type: 'window',
-        });
-        // Reload clients to ensure they are not using the old service worker.
-        clients.forEach((client) => {
-          if (client.url && 'navigate' in client) {
-            client.navigate(client.url);
-          }
-        });
-      } catch (e) {
-        console.warn('Failed to navigate some service worker clients:', e);
-      }
-    })()
-  );
+    }
+  })());
 });
