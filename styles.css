@@ -430,6 +430,27 @@ h3 { margin: 0 0 0.75rem; font-size: clamp(1.15rem, 2vw, 1.5rem); }
   border-color: var(--color-cyan);
 }
 
+.store-badge-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 10px;
+  transition: transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
+}
+
+.store-badge-link:hover,
+.store-badge-link:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(45, 212, 255, 0.28);
+}
+
+.store-badge {
+  display: block;
+  width: auto;
+  height: 48px;
+}
+
 button.button:disabled {
   cursor: not-allowed;
   opacity: 0.48;

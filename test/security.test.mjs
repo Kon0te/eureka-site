@@ -130,8 +130,10 @@ test('invitation renders only a bounded validated code', () => {
   assert.match(script, /\^\[A-Z0-9\]\{12\}\$/);
   assert.match(script, /codeElement\.textContent = code/);
   assert.doesNotMatch(script, /innerHTML/);
-  assert.match(page, /apps\.apple\.com\/app\/id6806642638/);
+  assert.match(page, /apps\.apple\.com\/fr\/app\/id6806642638/);
   assert.match(page, /play\.google\.com\/store\/apps\/details\?id=fr\.eurekaapps\.eureka/);
+  assert.match(page, /assets\/store\/download-on-app-store-fr\.svg/);
+  assert.match(page, /assets\/store\/get-it-on-google-play-fr\.png/);
   assert.match(page, /nouveau compte Eurêka/);
   assert.match(page, /3ᵉ Moment terminé/);
 });
@@ -139,8 +141,13 @@ test('invitation renders only a bounded validated code', () => {
 test('home exposes the stable official store destinations', () => {
   const page = read('index.html');
 
-  assert.match(page, /apps\.apple\.com\/app\/id6806642638/);
+  assert.ok(existsSync(new URL('../assets/store/download-on-app-store-fr.svg', import.meta.url)));
+  assert.ok(existsSync(new URL('../assets/store/get-it-on-google-play-fr.png', import.meta.url)));
+  assert.match(page, /apps\.apple\.com\/fr\/app\/id6806642638/);
   assert.match(page, /play\.google\.com\/store\/apps\/details\?id=fr\.eurekaapps\.eureka/);
+  assert.match(page, /assets\/store\/download-on-app-store-fr\.svg/);
+  assert.match(page, /assets\/store\/get-it-on-google-play-fr\.png/);
+  assert.doesNotMatch(page, /prochainement|est prévue|rest(?:er|ée) indisponible/i);
 });
 
 test('public pages use the validated Eurêka identity assets', () => {
