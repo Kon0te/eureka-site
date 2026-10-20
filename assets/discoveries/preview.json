@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ANE-A-espace-001",
+    "categoryId": "espace",
+    "title": "Un noyau immense",
+    "body": "Le noyau métallique de Mercure représente une part exceptionnellement importante de son volume. Cette petite planète rocheuse est donc loin d’être une simple version réduite de la Terre.",
+    "sourceTitle": "NASA · Mercure",
+    "sourceUrl": "https://science.nasa.gov/mercury/facts/",
+    "imageAsset": "assets/discoveries/a_mercury.jpg",
+    "imageCredit": "NASA/Johns Hopkins University Applied Physics Laboratory/Arizona State University/Carnegie Institution of Washington",
+    "imageLicense": "Public domain",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mercury_in_true_color.jpg",
+    "category": "Espace"
+  },
+  {
+    "id": "ANE-A-oceans-001",
+    "categoryId": "oceans",
+    "title": "La Lune déplace les mers",
+    "body": "Les marées résultent surtout des effets gravitationnels de la Lune et du Soleil. Le niveau marin change donc sous l’influence d’astres très éloignés, pas seulement du vent local.",
+    "sourceTitle": "NOAA · Les marées",
+    "sourceUrl": "https://www.noaa.gov/education/resource-collections/ocean-coasts/tides",
+    "imageAsset": "assets/discoveries/a_tide.png",
+    "imageCredit": " The SVG code is valid. This  vector image was created with Inkscape-default",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tide_overview.svg",
+    "category": "Océans"
+  },
+  {
+    "id": "ANE-A-animaux-001",
+    "categoryId": "animaux",
+    "title": "Trois cœurs pour une pieuvre",
+    "body": "Deux cœurs de la pieuvre envoient le sang vers ses branchies ; le troisième irrigue le reste du corps. Ces pompes ont donc des fonctions complémentaires plutôt qu’un rôle de réserve.",
+    "sourceTitle": "Natural History Museum · Les pieuvres",
+    "sourceUrl": "https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html",
+    "imageAsset": "assets/discoveries/animaux.jpg",
+    "imageCredit": "albert kok",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Octopus2.jpg",
+    "category": "Animaux"
+  },
+  {
+    "id": "ANE-D-photographie-001",
+    "categoryId": "photographie",
+    "title": "Une photo peut être bleue",
+    "body": "Le cyanotype produit une image au bleu de Prusse grâce à des composés du fer. La photographie historique ne se limite donc pas aux noirs et blancs des procédés à l’argent.",
+    "sourceTitle": "Science and Media Museum · Cyanotype",
+    "sourceUrl": "https://blog.scienceandmediamuseum.org.uk/introduction-cyanotype-process/",
+    "imageAsset": "assets/discoveries/d_cyanotype.jpg",
+    "imageCredit": "\nAtkins, Anna, 1799-1871",
+    "imageLicense": "Public domain",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Atkins_algae_cyanotype.jpg",
+    "category": "Photographie"
+  },
+  {
+    "categoryId": "histoire",
+    "title": "Trois écritures, deux langues",
+    "body": "La pierre de Rosette porte un texte en hiéroglyphes, en démotique et en grec. Les deux premières écritures transcrivent de l’égyptien : trois aspects graphiques ne correspondent donc pas nécessairement à trois langues différentes.",
+    "sourceTitle": "British Museum — Pierre de Rosette",
+    "sourceUrl": "https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-egypt/examine-rosetta-stone",
+    "id": "dec-histoire-001",
+    "imageAsset": "assets/discoveries/b-rosetta.jpg",
+    "imageCredit": "Hans Hillewaert",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG",
+    "category": "Histoire"
+  }
+]

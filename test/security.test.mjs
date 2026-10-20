@@ -172,8 +172,8 @@ test('public pages use the validated Eurêka identity assets', () => {
   assert.ok(existsSync(new URL('../assets/branding/eureka-social-card.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/icons/favicon.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/icons/apple-touch-icon.png', import.meta.url)));
-  assert.match(home, /assets\/branding\/eureka-logo-full\.png/);
-  assert.match(home, /assets\/branding\/eureka-social-card\.png/);
+  assert.match(home, /assets\/app\/icon\.png/);
+  assert.match(home, /og:image[^>]+assets\/app\/icon\.png/);
   assert.match(styles, /--color-bg: #0b1020/);
   assert.match(styles, /eureka-logo-sphere\.png/);
   assert.match(styles, /eureka-logo-wordmark\.png/);

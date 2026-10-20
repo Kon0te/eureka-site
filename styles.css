@@ -552,3 +552,9 @@ th {
 .contact-form-card {
   margin-top: 0;
 }
+
+/* Identity refresh, 20 October 2026. Shared by support and legal pages. */
+:root{--color-text:#fff4de;--color-text-soft:#c1c9e2;--color-blue:#af91ff;--color-cyan:#70dccb;--color-focus:#70dccb;--color-bg:#101125;--color-bg-soft:#1c1832;--color-surface:#25233c;--color-surface-strong:#2c2948;--color-border:#514569;--color-border-strong:#af91ff}
+.brand-mark{background-image:url('assets/app/icon.png')!important;background-size:contain!important;border-radius:12px}
+.brand-wordmark{background:none!important;width:auto!important;min-width:110px}
+.brand-wordmark::after{content:'Eurêka';font-family:'Avenir Next',system-ui,sans-serif;font-size:28px;font-weight:900;color:#fff4de}

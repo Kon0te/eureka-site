@@ -1,10 +1,10 @@
-﻿# Eurêka site
+# Eurêka site
 
 Site vitrine statique officiel de l'application mobile Eurêka.
 
 ## Ouvrir le site localement
 
-Le site est statique. Il peut être ouvert directement dans un navigateur avec `index.html`.
+Le site est statique. Utiliser un serveur HTTP local : le fil Découvertes charge un catalogue JSON local et ne fonctionne pas en `file://`.
 
 Pour un test plus proche de GitHub Pages, lancer un serveur HTTP local depuis ce dossier :
 
@@ -39,17 +39,19 @@ assets/branding/
 assets/icons/
 ```
 
-Les fichiers `assets/branding/eureka-logo-full.png`,
-`assets/branding/eureka-logo-sphere.png` et
-`assets/branding/eureka-logo-wordmark.png` sont les déclinaisons transparentes
-validées et partagées avec l’application. Le fond canonique reste `#0B1020` :
-il est fourni par l’interface, jamais incorporé dans ces trois logos. Le logo
-complet est réservé aux compositions de marque ; la sphère et le mot-symbole
-sont utilisés dans la navigation et les formats compacts.
+La page d’accueil utilise l’icône actuelle `assets/app/icon.png`, les vrais écrans
+mobiles et `home.css` (marine, prune, crème, jaune, menthe, lilas). Les anciennes
+déclinaisons restent disponibles pour compatibilité. `styles.css` harmonise aussi
+les pages de support et les mentions légales.
 
-`assets/branding/eureka-social-card.png` est la seule composition de partage
-qui intègre volontairement le fond canonique, afin de rester lisible dans les
-aperçus Open Graph et Twitter.
+Le fil `discoveries.js` présente cinq extraits du catalogue mobile, avec photos,
+sources et licences dans `assets/discoveries/preview.json`. Les cœurs restent en
+mémoire dans cette page : aucun compte, cookie, appel analytique ou synchronisation.
+Le site est une vitrine avec démonstration, pas une nouvelle application web Premium.
+Les prix sont consultés dans l’app pour éviter une offre Store périmée.
+
+Validation : `node --test test/*.cjs test/*.mjs`, puis contrôle navigateur des
+ancres, du menu, du scroll, des cœurs, des sources et des liens Store.
 
 ## Publier avec GitHub Pages
 
