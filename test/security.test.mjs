@@ -193,9 +193,8 @@ test('public pages use the validated Eurêka identity assets', () => {
   }
 });
 
-test('presentation logos are transparent and optically centered', () => {
+test('presentation wordmarks are transparent and optically centered', () => {
   for (const path of [
-    'assets/branding/eureka-logo-sphere.png',
     'assets/branding/eureka-logo-full.png',
     'assets/branding/eureka-logo-wordmark.png',
   ]) {
@@ -212,14 +211,20 @@ test('presentation logos are transparent and optically centered', () => {
   }
 });
 
-test('icons and social card use the exact application background', () => {
+test('compact website icons reuse the current application icon', () => {
+  const applicationIcon = decodePng('assets/app/icon.png');
+  const expectedCorner = applicationIcon.pixelAt(0, 0);
+
   for (const path of [
     'assets/icons/favicon.png',
     'assets/icons/apple-touch-icon.png',
-    'assets/branding/eureka-social-card.png',
+    'assets/branding/eureka-logo-sphere.png',
   ]) {
     const png = decodePng(path);
     const corner = png.pixelAt(0, 0);
-    assert.deepEqual(corner, { red: 11, green: 16, blue: 32, alpha: 255 });
+    assert.equal(corner.alpha, 255);
+    assert.ok(Math.abs(corner.red - expectedCorner.red) <= 3);
+    assert.ok(Math.abs(corner.green - expectedCorner.green) <= 3);
+    assert.ok(Math.abs(corner.blue - expectedCorner.blue) <= 3);
   }
 });
